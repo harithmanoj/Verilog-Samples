@@ -33,7 +33,7 @@
 */
 
 
-module alu(a, b, op, Cin, Zin, Sin, Pin, C, Z, S, P out);
+module alu(a, b, op, Cin, Zin, Sin, Pin, C, Z, S, P, out);
 
 	input [7:0] a;
 	input [7:0] b;
@@ -57,7 +57,7 @@ module alu(a, b, op, Cin, Zin, Sin, Pin, C, Z, S, P out);
 	wire [7:0] addInB;
 	wire [7:0] zero;
 	wire [7:0] arithOut;
-	wire [7:0] arithCarry;
+	wire arithCarry;
 	assign zero = 8'h00;
 	
 	assign shouldAdd = ~( op[3] | op[2] );
@@ -71,22 +71,26 @@ module alu(a, b, op, Cin, Zin, Sin, Pin, C, Z, S, P out);
 	
 	assign shouldLogic = (~op[3]) & op[2];
 	
+	wire [7:0] notRes;
 	assign notRes = ~a;
+	wire  [7:0] andRes;
 	assign andRes = a & b;
+	wire  [7:0] orRes;
 	assign orRes  = a | b;
+	wire  [7:0] xorRes;
 	assign xorRes = a ^ b;
 	
-	wire [7:1] notAndSelect;
-	wire [7:1] orXorSelect;
-	wire [7:1] LogicOut;
+	wire [7:0] notAndSelect;
+	wire [7:0] orXorSelect;
+	wire [7:0] LogicOut;
 	mux8_2_1 selectLogic10(.a(notRes), .b(andRes), .s(op[0]), .o(notAndSelect));
 	mux8_2_1 selectLogic11(.a(orRes), .b(xorRes), .s(op[0]), .o(orXorSelect));
 	mux8_2_1 selectLogic0(.a(notAndSelect), .b(orXorSelect), .s(op[1]), .o(LogicOut));
 	
-	wire [7:1] leftOut;
-	wire [7:1] rightOut;
-	wire [7:1] shiftLeftIn;
-	wire [7:1] shiftRightIn;
+	wire [7:0] leftOut;
+	wire [7:0] rightOut;
+	wire [7:0] shiftLeftIn;
+	wire [7:0] shiftRightIn;
 	
 	
 	assign shouldShiftLeft = op[3]  & (~op[0]);
@@ -103,19 +107,19 @@ module alu(a, b, op, Cin, Zin, Sin, Pin, C, Z, S, P out);
 	wire genShiftCarryL;
 	wire genShiftCarryR;
 	
-	assign in = (zero[0] & inZero) | (a[7] & inMSB) | (a[0] & LSB) | (Cin & inCarry);
+	assign in = (zero[0] & inZero) | (a[7] & inMSB) | (a[0] & inLSB) | (Cin & inCarry);
 	
 	
 	shiftLeft left( .a(shiftLeftIn), .b(leftOut), .in(in), .out(genShiftCarryL));
-	shiftRight right( .a(shiftRightIn), .b(rightOut), in(in), .out(genShiftCarryR));
+	shiftRight right( .a(shiftRightIn), .b(rightOut), .in(in), .out(genShiftCarryR));
 	
 	assign genShiftCarry = (genShiftCarryL & shouldShiftLeft) | ( genShiftCarryR & shouldShiftRight);
 	
-	wire [7:1] shiftOut;
+	wire [7:0] shiftOut;
 	
 	mux8_2_1 shiftOutSelect( .a(leftOut), .b(rightOut), .s(shouldShiftRight), .o(shiftOut));
 	
-	wire [7:1] logicArithOut;
+	wire [7:0] logicArithOut;
 	mux8_2_1 logicArithSelect(  .a(arithOut), .b(LogicOut), .s(op[2]), .o(logicArithOut));
 	
 	mux8_2_1 generateOut( .a(logicArithOut), .b(shiftOut), .s(op[3]), .o(out));
