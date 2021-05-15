@@ -1,0 +1,81 @@
+$date
+	Sat May 15 22:27:34 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Compare_4_tb $end
+$var wire 1 ! lt $end
+$var wire 1 " gt $end
+$var wire 1 # eq $end
+$var reg 4 $ a [3:0] $end
+$var reg 4 % b [3:0] $end
+$scope module compare4Bit $end
+$var wire 4 & a [3:0] $end
+$var wire 4 ' b [3:0] $end
+$var wire 1 # eq $end
+$var wire 1 ! lt $end
+$var wire 1 " gt $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx '
+bx &
+bx %
+bx $
+x#
+x"
+x!
+$end
+#2
+0#
+1"
+0!
+b1010 %
+b1010 '
+b1110 $
+b1110 &
+#4
+b1001 %
+b1001 '
+0"
+1!
+b1000 $
+b1000 &
+#6
+b110 %
+b110 '
+b1 $
+b1 &
+#8
+b1100 %
+b1100 '
+0"
+1!
+b111 $
+b111 &
+#10
+1"
+0!
+b10 %
+b10 '
+b1001 $
+b1001 &
+#12
+b11 %
+b11 '
+b1111 $
+b1111 &
+#14
+1#
+0"
+b1010 %
+b1010 '
+b1010 $
+b1010 &
+#16
