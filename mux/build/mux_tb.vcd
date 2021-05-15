@@ -1,0 +1,472 @@
+$date
+	Sat May 15 22:44:00 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module mux_tb $end
+$var wire 1 ! s $end
+$var wire 1 " outgt $end
+$var wire 1 # outbh $end
+$var wire 1 $ outData $end
+$var wire 2 % out2gt [1:0] $end
+$var wire 1 & b1 $end
+$var wire 1 ' b $end
+$var wire 1 ( a1 $end
+$var wire 1 ) a $end
+$var reg 5 * in [4:0] $end
+$scope module Behavioral $end
+$var wire 1 ) d0 $end
+$var wire 1 ' d1 $end
+$var wire 1 ! sel $end
+$var reg 1 # out $end
+$upscope $end
+$scope module DataFlow $end
+$var wire 1 ) d0 $end
+$var wire 1 ' d1 $end
+$var wire 1 ! sel $end
+$var wire 1 $ out $end
+$upscope $end
+$scope module Gate $end
+$var wire 1 ) d0 $end
+$var wire 1 ' d1 $end
+$var wire 1 + min0 $end
+$var wire 1 , min1 $end
+$var wire 1 - nSel $end
+$var wire 1 " out $end
+$var wire 1 ! sel $end
+$upscope $end
+$scope module Gate2Bit $end
+$var wire 2 . d0 [1:0] $end
+$var wire 2 / d1 [1:0] $end
+$var wire 1 0 nSel $end
+$var wire 1 ! sel $end
+$var wire 2 1 out [1:0] $end
+$var wire 2 2 min1 [1:0] $end
+$var wire 2 3 min0 [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx 3
+bx 2
+bx 1
+x0
+bx /
+bx .
+x-
+x,
+x+
+bx *
+x)
+x(
+x'
+x&
+bx %
+x$
+x#
+x"
+x!
+$end
+#2
+b0 %
+b0 1
+0"
+b0 3
+0+
+0#
+0$
+1-
+0,
+10
+b0 2
+0)
+0(
+0'
+0&
+0!
+b0 .
+b0 /
+b0 *
+#4
+0-
+00
+1!
+b1 *
+#6
+1-
+10
+1&
+0!
+b1 /
+b10 *
+#8
+b1 %
+b1 1
+0-
+00
+b1 2
+1!
+b11 *
+#10
+b0 %
+b0 1
+1-
+10
+b0 2
+1'
+0&
+0!
+b10 /
+b100 *
+#12
+b10 %
+b10 1
+1"
+1#
+1$
+0-
+1,
+00
+b10 2
+1!
+b101 *
+#14
+b0 %
+b0 1
+0"
+0#
+0$
+1-
+0,
+10
+b0 2
+1&
+0!
+b11 /
+b110 *
+#16
+b11 %
+b11 1
+1"
+1#
+1$
+0-
+1,
+00
+b11 2
+1!
+b111 *
+#18
+b1 %
+b1 1
+0"
+b1 3
+0#
+0$
+1-
+0,
+10
+b0 2
+1(
+0'
+0&
+0!
+b1 .
+b0 /
+b1000 *
+#20
+b0 %
+b0 1
+b0 3
+0-
+00
+1!
+b1001 *
+#22
+b1 %
+b1 1
+b1 3
+1-
+10
+1&
+0!
+b1 /
+b1010 *
+#24
+b0 3
+0-
+00
+b1 2
+1!
+b1011 *
+#26
+b1 %
+b1 1
+b1 3
+1-
+10
+b0 2
+1'
+0&
+0!
+b10 /
+b1100 *
+#28
+b10 %
+b10 1
+1"
+b0 3
+1#
+1$
+0-
+1,
+00
+b10 2
+1!
+b1101 *
+#30
+b1 %
+b1 1
+0"
+b1 3
+0#
+0$
+1-
+0,
+10
+b0 2
+1&
+0!
+b11 /
+b1110 *
+#32
+b11 %
+b11 1
+1"
+b0 3
+1#
+1$
+0-
+1,
+00
+b11 2
+1!
+b1111 *
+#34
+b10 %
+b10 1
+b10 3
+1+
+1-
+0,
+10
+b0 2
+1)
+0(
+0'
+0&
+0!
+b10 .
+b0 /
+b10000 *
+#36
+b0 %
+b0 1
+0"
+0+
+b0 3
+0#
+0$
+0-
+00
+1!
+b10001 *
+#38
+b10 %
+b10 1
+1"
+1+
+b10 3
+1#
+1$
+1-
+10
+1&
+0!
+b1 /
+b10010 *
+#40
+0"
+b1 %
+b1 1
+0+
+b0 3
+0#
+0$
+0-
+00
+b1 2
+1!
+b10011 *
+#42
+1"
+b10 %
+b10 1
+1+
+b10 3
+1#
+1$
+1-
+10
+b0 2
+1'
+0&
+0!
+b10 /
+b10100 *
+#44
+0+
+b0 3
+0-
+1,
+00
+b10 2
+1!
+b10101 *
+#46
+b10 %
+b10 1
+1+
+1"
+b10 3
+1-
+0,
+10
+b0 2
+1&
+0!
+b11 /
+b10110 *
+#48
+b11 %
+b11 1
+0+
+b0 3
+0-
+1,
+00
+b11 2
+1!
+b10111 *
+#50
+b11 %
+b11 1
+1+
+1"
+b11 3
+1-
+0,
+10
+b0 2
+1(
+0'
+0&
+0!
+b11 .
+b0 /
+b11000 *
+#52
+b0 %
+b0 1
+0"
+0+
+b0 3
+0#
+0$
+0-
+00
+1!
+b11001 *
+#54
+b11 %
+b11 1
+1"
+1+
+b11 3
+1#
+1$
+1-
+10
+1&
+0!
+b1 /
+b11010 *
+#56
+b1 %
+b1 1
+0"
+0+
+b0 3
+0#
+0$
+0-
+00
+b1 2
+1!
+b11011 *
+#58
+1"
+b11 %
+b11 1
+1+
+b11 3
+1#
+1$
+1-
+10
+b0 2
+1'
+0&
+0!
+b10 /
+b11100 *
+#60
+b10 %
+b10 1
+0+
+b0 3
+0-
+1,
+00
+b10 2
+1!
+b11101 *
+#62
+b11 %
+b11 1
+1+
+1"
+b11 3
+1-
+0,
+10
+b0 2
+1&
+0!
+b11 /
+b11110 *
+#64
+0+
+b0 3
+0-
+1,
+00
+b11 2
+1!
+b11111 *
+#66
