@@ -9,7 +9,7 @@
 
 
 
-module Mux2_1DataFlow( d0, d1, sel, out);
+module Mux2_1_2DataFlow( d0, d1, sel, out);
 
 	input [1:0] d0, d1;
 	input sel;
