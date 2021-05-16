@@ -10,17 +10,17 @@
 
 
 
-module Mux2_1Behavioral( d0, d1, d2, sel, out);
+module Mux3_1Behavioral( d0, d1, d2, sel, out);
 
-	input d0, d1;
+	input d0, d1, d2;
 	input [1:0] sel;
 	
-	output reg out;
+	output wire out;
 	
-	reg lowerSelect;
+	wire lowerSelect;
 	
-	Mux2_1Beh lowerMux(.d0(d0), .d1(d1), .sel(sel[0]), .out(lowerSelect));
-	Mux2_1Beh upperMux(.d0(lowerSelect), .d1(d2), .sel(sel[1]), .out(out));
+	Mux2_1Behavioral lowerMux(.d0(d0), .d1(d1), .sel(sel[0]), .out(lowerSelect));
+	Mux2_1Behavioral upperMux(.d0(lowerSelect), .d1(d2), .sel(sel[1]), .out(out));
 	
 endmodule
 	
