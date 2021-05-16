@@ -1,5 +1,5 @@
 // Full Adder Test Bench 1 bit
-// Harith Manoj (C) 2021
+// 
 
 module FullAdder_1_tb;
 

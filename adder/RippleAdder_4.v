@@ -7,7 +7,7 @@
 //				:	cout	: out	: carry of this operation
 //				:	sum		: out	: sum of a, b, cin
 //
-//			Harith Manoj (C) 2021
+//			
 
 module RippleAdder_4( a,  b, cin, cout, sum);
 

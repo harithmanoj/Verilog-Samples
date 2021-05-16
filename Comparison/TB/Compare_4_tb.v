@@ -1,5 +1,5 @@
 // Comparator Test Bench 4 bit
-// Harith Manoj (C) 2021
+// 
 
 module Compare_4_tb;
 

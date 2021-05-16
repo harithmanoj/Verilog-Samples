@@ -1,5 +1,5 @@
 // Test Bench for muxs
-//		Harith Manoj (C) 2021
+//		
 
 
 module mux2bit2_1_tb;

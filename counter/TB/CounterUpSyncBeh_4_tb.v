@@ -1,5 +1,5 @@
 // Counter Test Bench
-//	Harith Manoj (C) 2021
+//	
 
 module CounterUpSyncBeh_4_tb;
 

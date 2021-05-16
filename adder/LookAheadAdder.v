@@ -10,7 +10,7 @@
 //				:	cout	: out	: carry or Borrow of this operation
 //				:	out		: out	: sum or difference of a, b, C
 //
-// Harith Manoj (C) 2021
+// 
 
 
 module LookAheadAdder 

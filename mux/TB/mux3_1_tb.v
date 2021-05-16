@@ -1,5 +1,5 @@
 // Test bench for 3-1 mux
-// Harith Manoj (C) 2021
+// 
 
 module mux3_1_tb;
 

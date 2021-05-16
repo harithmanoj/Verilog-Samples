@@ -5,7 +5,7 @@
 //				: enable	: in	: enable counting.
 //				: Q			: out	: Output of counter
 //				
-//		Harith Manoj (C) 2021
+//		
 
 module CounterUpSyncBeh_4 ( clk, n_reset, enable, Q );
 

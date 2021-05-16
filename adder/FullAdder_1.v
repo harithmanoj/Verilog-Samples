@@ -7,7 +7,7 @@
 //				:	cout	: out	: carry of this operation
 //				:	sum		: out	: sum of a, b, cin
 //
-//		Harith Manoj (C) 2021
+//		
 
 
 module FullAdder_1( a, b, cin, sum, cout);

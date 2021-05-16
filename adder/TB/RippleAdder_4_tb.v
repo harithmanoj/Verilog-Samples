@@ -1,5 +1,5 @@
 // Ripple Adder Test Bench 4 bit
-// Harith Manoj (C) 2021
+// 
 
 module RippleAdder_4_tb;
 

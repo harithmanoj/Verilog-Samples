@@ -8,7 +8,7 @@
 //				:	p		: out	: Propagate prediction
 //				:	g		: out	: Generate prediction
 //				
-//			Harith Manoj (C) 2021
+//			
 
 
 module AddCell(a, b, cin, p, g, sum);
