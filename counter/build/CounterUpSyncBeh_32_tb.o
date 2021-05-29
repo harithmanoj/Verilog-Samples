@@ -1,0 +1,150 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-965-g55e06db6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "F:\iverilog\lib\ivl\system.vpi";
+:vpi_module "F:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "F:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "F:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "F:\iverilog\lib\ivl\va_math.vpi";
+S_000000000094d490 .scope module, "CounterUpSyncBeh_32_tb" "CounterUpSyncBeh_32_tb" 2 4;
+ .timescale 0 0;
+v0000000001173e80_0 .net "Q", 31 0, L_0000000001174240;  1 drivers
+v0000000001173840_0 .var "clk", 0 0;
+v0000000001173980_0 .var "enable", 0 0;
+v00000000011738e0_0 .var "n_reset", 0 0;
+S_000000000094d620 .scope module, "counterBeh" "CounterUpSyncBeh_32" 2 10, 3 10 0, S_000000000094d490;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "n_reset";
+    .port_info 2 /INPUT 1 "enable";
+    .port_info 3 /OUTPUT 32 "Q";
+L_000000000094af70 .functor AND 1, v0000000001173980_0, L_0000000001173b60, C4<1>, C4<1>;
+v000000000094acf0_0 .net "Q", 31 0, L_0000000001174240;  alias, 1 drivers
+v000000000094ad90_0 .net "Ql", 15 0, v000000000094a850_0;  1 drivers
+v000000000094ae30_0 .net "Qu", 15 0, v000000000094aa70_0;  1 drivers
+v000000000094aed0_0 .net *"_ivl_1", 0 0, L_0000000001173b60;  1 drivers
+v00000000011c0030_0 .net "clk", 0 0, v0000000001173840_0;  1 drivers
+v0000000001173700_0 .net "enable", 0 0, v0000000001173980_0;  1 drivers
+v0000000001173520_0 .net "n_reset", 0 0, v00000000011738e0_0;  1 drivers
+v00000000011737a0_0 .net "uEnable", 0 0, L_000000000094af70;  1 drivers
+L_0000000001173b60 .reduce/and v000000000094a850_0;
+L_0000000001174240 .concat [ 16 16 0 0], v000000000094a850_0, v000000000094aa70_0;
+S_0000000001176960 .scope module, "lower" "CounterUpSyncBeh_16" 3 21, 4 10 0, S_000000000094d620;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "n_reset";
+    .port_info 2 /INPUT 1 "enable";
+    .port_info 3 /OUTPUT 16 "Q";
+v000000000094a850_0 .var "Q", 15 0;
+v0000000001142e40_0 .net "clk", 0 0, v0000000001173840_0;  alias, 1 drivers
+v0000000001176af0_0 .net "enable", 0 0, v0000000001173980_0;  alias, 1 drivers
+v0000000001176b90_0 .net "n_reset", 0 0, v00000000011738e0_0;  alias, 1 drivers
+E_0000000001178900 .event posedge, v0000000001142e40_0;
+S_0000000001176c30 .scope module, "upper" "CounterUpSyncBeh_16" 3 20, 4 10 0, S_000000000094d620;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "n_reset";
+    .port_info 2 /INPUT 1 "enable";
+    .port_info 3 /OUTPUT 16 "Q";
+v000000000094aa70_0 .var "Q", 15 0;
+v000000000094ab10_0 .net "clk", 0 0, v0000000001173840_0;  alias, 1 drivers
+v000000000094abb0_0 .net "enable", 0 0, L_000000000094af70;  alias, 1 drivers
+v000000000094ac50_0 .net "n_reset", 0 0, v00000000011738e0_0;  alias, 1 drivers
+    .scope S_0000000001176c30;
+T_0 ;
+    %pushi/vec4 0, 0, 16;
+    %store/vec4 v000000000094aa70_0, 0, 16;
+    %end;
+    .thread T_0;
+    .scope S_0000000001176c30;
+T_1 ;
+    %wait E_0000000001178900;
+    %load/vec4 v000000000094ac50_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %pushi/vec4 0, 0, 16;
+    %assign/vec4 v000000000094aa70_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v000000000094abb0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.2, 8;
+    %load/vec4 v000000000094aa70_0;
+    %addi 1, 0, 16;
+    %assign/vec4 v000000000094aa70_0, 0;
+T_1.2 ;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0000000001176960;
+T_2 ;
+    %pushi/vec4 0, 0, 16;
+    %store/vec4 v000000000094a850_0, 0, 16;
+    %end;
+    .thread T_2;
+    .scope S_0000000001176960;
+T_3 ;
+    %wait E_0000000001178900;
+    %load/vec4 v0000000001176b90_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.0, 8;
+    %pushi/vec4 0, 0, 16;
+    %assign/vec4 v000000000094a850_0, 0;
+    %jmp T_3.1;
+T_3.0 ;
+    %load/vec4 v0000000001176af0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.2, 8;
+    %load/vec4 v000000000094a850_0;
+    %addi 1, 0, 16;
+    %assign/vec4 v000000000094a850_0, 0;
+T_3.2 ;
+T_3.1 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_000000000094d490;
+T_4 ;
+    %delay 1, 0;
+    %load/vec4 v0000000001173840_0;
+    %inv;
+    %store/vec4 v0000000001173840_0, 0, 1;
+    %jmp T_4;
+    .thread T_4;
+    .scope S_000000000094d490;
+T_5 ;
+    %delay 320000, 0;
+    %load/vec4 v0000000001173980_0;
+    %inv;
+    %store/vec4 v0000000001173980_0, 0, 1;
+    %jmp T_5;
+    .thread T_5;
+    .scope S_000000000094d490;
+T_6 ;
+    %vpi_call 2 18 "$dumpfile", "CounterUpSyncBeh_32_tb.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars", 32'sb00000000000000000000000000000010, S_000000000094d490 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000001173840_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000001173980_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011738e0_0, 0, 1;
+    %delay 330000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000011738e0_0, 0, 1;
+    %delay 26, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011738e0_0, 0, 1;
+    %delay 33, 0;
+    %vpi_call 2 29 "$finish" {0 0 0};
+    %end;
+    .thread T_6;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "CounterUpSyncBeh_32_tb.v";
+    "../CounterUpSyncBeh_32.v";
+    "../CounterUpSyncBeh_16.v";
