@@ -1,5 +1,5 @@
 //		
-//	Does 4 ripple carry bit Addition.
+//	Does 4 bit ripple carry Addition.
 //	
 //	port		:	a 		: in	: augend 
 //				:	b		: in	: addend 
